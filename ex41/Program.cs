@@ -2,10 +2,11 @@
 // Пример: 0,7,8,-2,-2 -> 2
 
 Console.Write("Введите числа через запятую: ");
-int[] GetArray = Array.ConvertAll(Console.ReadLine().Split(","), int.Parse);
-int result = SearchPositive(GetArray);
+string[] getArray = Console.ReadLine().Split(",");
+int[] numericArray = ConvertArrayToInt(getArray);
+int result = SearchPositive(numericArray);
 Console.Write("Получен ряд чисел:"); 
-PrintArray(GetArray); // вывод на экран полученного массива чисел
+PrintArray(numericArray); // вывод на экран полученного массива чисел
 Console.WriteLine($"Кол-во элементов больше нуля: {result}");
 
 int SearchPositive(int[] array) // метод нахождения кол-ва полож.чисел
@@ -21,6 +22,15 @@ int SearchPositive(int[] array) // метод нахождения кол-ва �
     return count;
 }
 
+int[] ConvertArrayToInt(string[] array) 
+{
+    int[] result = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        result[i] = Convert.ToInt32(array[i]);
+    }
+    return result;
+}
 
 void PrintArray(int[] num) // метод для вывода массива на экран
 {
