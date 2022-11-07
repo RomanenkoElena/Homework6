@@ -4,9 +4,9 @@
 Console.Write("Введите числа через запятую: ");
 string[] getArray = Console.ReadLine().Split(",");
 int[] numericArray = ConvertArrayToInt(getArray);
-int result = SearchPositive(numericArray);
-Console.Write("Получен ряд чисел:"); 
+Console.Write("Получен ряд чисел:");
 PrintArray(numericArray); // вывод на экран полученного массива чисел
+int result = SearchPositive(numericArray);
 Console.WriteLine($"Кол-во элементов больше нуля: {result}");
 
 int SearchPositive(int[] array) // метод нахождения кол-ва полож.чисел
@@ -22,7 +22,7 @@ int SearchPositive(int[] array) // метод нахождения кол-ва �
     return count;
 }
 
-int[] ConvertArrayToInt(string[] array) 
+int[] ConvertArrayToInt(string[] array) // метод преобраз-ния полученных элем-тов массива в числовые
 {
     int[] result = new int[array.Length];
     for (int i = 0; i < array.Length; i++)
